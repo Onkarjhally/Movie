@@ -1,0 +1,213 @@
+/* ================= Global Reset ================= */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+/* ================= Navbar ================= */
+.navbar {
+  background-color: rgb(19, 19, 20);
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav-logo {
+  color: rgb(0, 146, 243);
+  font-weight: 600;
+  font-size: 1.7rem;
+}
+
+.nav-link {
+  color: rgb(8, 234, 250);
+  font-weight: 500;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.nav-link .link {
+  text-decoration: none;
+  color: rgb(8, 234, 250);
+}
+
+/* ================= Home ================= */
+.Home {
+  background-color: rgb(55, 55, 56);
+  min-height: 100vh;
+  width: 100%;
+  padding-bottom: 2rem;
+}
+
+/* ========== Input Group ========== */
+.input-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 2rem;
+  flex-wrap: wrap;
+}
+
+.input-group input {
+  background-color: rgba(75, 75, 78, 0.822);
+  font-size: 18px;
+  padding: 0.8rem;
+  width: 400px;
+  border: none;
+  border-radius: 0.4rem;
+  transition: outline 0.3s ease;
+}
+
+.input-group input:focus {
+  outline: 2px solid rgb(0, 146, 243);
+}
+
+.input-group input:hover {
+  outline: 2px solid rgb(134, 138, 141);
+}
+
+.input-group button {
+  background-color: red;
+  font-size: 14px;
+  padding: 0.8rem 1rem;
+  color: rgb(221, 235, 230);
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, outline 0.2s ease;
+}
+
+.input-group button:hover {
+  outline: 3px solid rgb(95, 102, 105);
+  transform: scale(1.05);
+}
+
+/* ========== Movie Grid ========== */
+.Home .movie-grid {
+  padding: 10px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  align-items: start;
+}
+
+/* ================= Movie Card ================= */
+.movie-card .card-body {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: rgb(20, 20, 20);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-card .card-body:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.card-body .poster-img {
+  position: relative;
+  overflow: hidden;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.poster-img img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 12px 12px 0 0;
+  transition: transform 0.4s ease;
+}
+
+.poster-img .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  border-radius: 12px 12px 0 0;
+  transition: opacity 0.3s ease;
+}
+
+.poster-img:hover img {
+  transform: scale(1.05);
+}
+
+.poster-img:hover .overlay {
+  opacity: 1;
+}
+
+/* ========== Like Button ========== */
+.poster-img .like-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: red;
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  font-size: 24px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.poster-img:hover .like-btn {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* ========== Poster Text ========== */
+.card-body .poster-text {
+  background-color: rgba(20, 20, 20, 0.918);
+  color: white;
+  height: 68px;
+  padding: 8px 0 8px 14px;
+  border-radius: 0 0 12px 12px;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+
+/* ================= Responsive ================= */
+
+/* Tablet */
+@media (max-width: 768px) {
+
+  .poster-img .like-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .poster-img .like-btn {
+    width: 25px;
+    height: 25px;
+    font-size: 18px;
+  }
+
+  .input-group input {
+    width: 80%;
+  }
+
+  .nav-link {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 10px;
+  }
+}
